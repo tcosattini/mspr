@@ -2,7 +2,7 @@ try{
 	node{
     stage('Git Checkout'){
 		git credentialsId: 'github', 
-		    url: 'https://github.com/testinfected/hamcrest-matchers',
+		    url: 'https://github.com/tcosattini/mspr',
 			branch: "${params.gitBranch}"
 	  }
 	  stage('Maven Build'){
