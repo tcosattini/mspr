@@ -1,7 +1,6 @@
 
 node{
-	stage('Git fetch'){
-		git credentialsId: 'Jenkins', 
+	stage('Git fetch'){		
 		  url: 'https://github.com/tcosattini/mspr',
 			branch: "${params.gitBranch}"
 	  }
