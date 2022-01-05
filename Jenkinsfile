@@ -1,11 +1,15 @@
 
-	node{
-    stage('Git Checkout'){
-		git credentialsId: 'github', 
-		    url: 'https://github.com/tcosattini/mspr',
+node{
+	stage('Git fetch'){
+		git credentialsId: 'tcosattini', 
+		  url: 'https://github.com/tcosattini/mspr',
 			branch: "${params.gitBranch}"
 	  }
-	  stage('Maven Build'){
+	stage('Build'){
 		sh 'mvn clean package'
-	  }}
+	  }
+	stage('SSH push server'){
+		sh 'mvn clean package'
+	  }
+	}
 
